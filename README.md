@@ -15,6 +15,11 @@ app (see intro-to-flask-main folder) that predicts what the input image is
 
 ## Deploying the App in AWS BeanStalk
 
+In this assignment you will modify the Rock Paper Scissor App so that you can deploy it using Aws Elastic Beanstalk (EBS).
+You just need imgs and rpsapp folders.
+
+__Step 0:__
+
 "AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS."
 
 Install AWS CLI
@@ -25,9 +30,6 @@ Install EB CLI (Elastic Beanstalk cli)
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html
 (brew install awsebcli)
 
-In this assignment you will modify the Rock Paper Scissor App so that you can deploy it using Aws Elastic Beanstalk (EBS).
-
-To do this, follow the following steps:
 
 __Step 1:__
 
@@ -55,9 +57,10 @@ __Step 5:__
 
 - AWS EBS requires you to have a specific folder structure.
 
+This is the folder structure for the app we'll send to AWS. Some of the files to be created in the steps are already in this folder.
 ```
 rpsapp
-    - .elasticbeanstalk
+    - .elasticbeanstalk (created when you init eb)
     - rpsapp
         - static
         - templates
@@ -90,7 +93,7 @@ __Step 7:__
 - Next to create the AWS EBS instance:
 
 ```
-eb create rpsapp --instance_type t2.large
+eb create rpsapp --instance_type t2.large (or change now the name of the app if you want, ex: rpsapp-alessio)
 ```
 
 - Where we can use the `instance_type` flag to specify the instance we want.
